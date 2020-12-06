@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install sam
         run: pip install aws-sam-cli >/dev/null 2>&1
-      - run: unzip dist/torchlambda.zip
+      #- run: unzip dist/torchlambda.zip
       - run: ls dist
       - name: auto-ci
         id: auto-ci
