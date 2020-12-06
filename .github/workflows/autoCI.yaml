@@ -29,4 +29,4 @@ jobs:
           AWS_DEFAULT_REGION: eu-central-1
           SAM_CLI_TELEMETRY: 0
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      - run: ls
+      - run: ls /home/runner/work/Lambda-Runtime-Template/Lambda-Runtime-Template/.aws-sam/build/SamDemoFunction
