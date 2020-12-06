@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  build website
+  lambda template
   
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
@@ -9,14 +9,12 @@ Globals:
     Timeout: 30
 
 Resources:
-  AppFunction: # your app function
+  SamDemoFunction: # your app function
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: app/
-      Layers:
-        - !Ref DependencyLayer
-      Handler: app.handler
-      Runtime: nodejs12.x
+      CodeUri: .
+      Handler: torchlambda
+      Runtime: provided
       Events:
         Gateway:
           Type: Api
@@ -27,21 +25,16 @@ Resources:
         Variables:
            k1: "v1"
            k2: "v2"
-  DependencyLayer:
-    Type: AWS::Serverless::LayerVersion
-    Properties:
-      LayerName: dependencies
-      Description: Dependency layer for app function
-      ContentUri: ./app/node_modules/
-      RetentionPolicy: Retain
+    Metadata:
+      BuildMethod: makefile
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
-  AppApi:
+  SamDemoApi:
     Description: "API Gateway endpoint URL for Prod stage for app function"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/app/" 
-  AppFunction:
+  SamDemoFunction:
     Description: "App Lambda Function ARN"
-    Value: !GetAtt AppFunction.Arn
+    Value: !GetAtt SamDemoFunction.Arn
