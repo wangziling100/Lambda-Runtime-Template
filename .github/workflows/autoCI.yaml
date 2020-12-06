@@ -18,6 +18,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install sam
         run: pip install aws-sam-cli >/dev/null 2>&1
+      - run: unzip
       - name: auto-ci
         id: auto-ci
         uses: wangziling100/AutoCI@v1.0.8
