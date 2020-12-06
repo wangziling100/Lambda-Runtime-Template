@@ -1,7 +1,6 @@
 {
     "actions":[
         "sam build",
-        "sam local invoke \"SamDemoFunction\" -e events/event.json --env-vars env.json",
-        "sam deploy"
+        "sam local invoke \"SamDemoFunction\" -e events/event.json --env-vars env.json"
     ]
 }
