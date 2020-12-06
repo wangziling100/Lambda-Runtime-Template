@@ -1,6 +1,7 @@
 {
     "actions":[
         "sam build",
+        "cp dist/torchlambda.zip /home/runner/work/Lambda-Runtime-Template/Lambda-Runtime-Template/.aws-sam/build/SamDemoFunction",
         "sam local invoke \"SamDemoFunction\" -e events/event.json --env-vars env.json"
     ]
 }
