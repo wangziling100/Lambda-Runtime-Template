@@ -34,8 +34,8 @@ Resources:
     Type: AWS::Serverless::LayerVersion
     Properties:
       ContentUri: .
-      Metadata:
-        BuildMethod: makefile
+    Metadata:
+      BuildMethod: makefile
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
