@@ -1,5 +1,6 @@
 {
     "actions":[
+        "apt-get install zip unzip",
         "sam build",
         "sam local invoke \"SamDemoFunction\" -e events/event.json --env-vars env.json"
     ]
