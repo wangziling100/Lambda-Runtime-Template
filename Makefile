@@ -3,5 +3,5 @@ build-SamDemoFunction:
 	@echo "--------------------"
 	tmp=pwd
 	@echo $tmp
-	ls
+	mkdir demotest
 	mv dist/torchlambda.zip $(ARTIFACTS_DIR)
