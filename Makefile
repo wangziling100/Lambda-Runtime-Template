@@ -4,5 +4,5 @@ build-SamDemoFunction:
 	tmp=pwd
 	@echo $tmp
 	mkdir demotest
-	mv dist/torchlambda.zip $(ARTIFACTS_DIR)
-	unzip $(ARTIFACTS_DIR)/torchlambda.zip
+	#mv dist/torchlambda.zip $(ARTIFACTS_DIR)
+	#unzip $(ARTIFACTS_DIR)/torchlambda.zip
