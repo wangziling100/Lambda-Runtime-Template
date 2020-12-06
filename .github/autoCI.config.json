@@ -1,7 +1,5 @@
 {
     "actions":[
-        "cd app && yarn install",
-        "cp dist/torchlambda.zip $(ARTIFACTS_DIR)",
         "sam build",
         "sam local invoke \"SamDemoFunction\" -e events/event.json --env-vars env.json",
         "sam deploy"
