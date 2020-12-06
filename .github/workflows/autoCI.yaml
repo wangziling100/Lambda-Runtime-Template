@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install sam
         run: pip install aws-sam-cli >/dev/null 2>&1
-      - run: unzip
+      - run: unzip dist/torchlambda.zip
       - name: auto-ci
         id: auto-ci
         uses: wangziling100/AutoCI@v1.0.8
@@ -31,3 +31,4 @@ jobs:
           SAM_CLI_TELEMETRY: 0
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       - run: ls /home/runner/work/Lambda-Runtime-Template/Lambda-Runtime-Template/.aws-sam/build/SamDemoFunction
+      - run: ls dist
